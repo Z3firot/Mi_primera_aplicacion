@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'welcome_screen.dart'; 
+
 
 void main() {
   runApp(const MyApp());
 }
 
+// 🌟 Aplicación principal
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,11 +18,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Widgets Básicos en Flutter'),
-    );
+      home: const WelcomeScreen(),
+      );
   }
 }
 
+// 🏠 Pantalla principal
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -31,10 +35,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _incrementCounter() => setState(() => _counter++);
+
+  void _navigateToSecondScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SecondScreen()),
+    );
   }
 
   @override
@@ -44,10 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
             const Text(
               '¡Hola mundo!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -57,9 +64,21 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 20),
+            ElevatedButton.icon(
+              onPressed: _incrementCounter,
+              icon: const Icon(Icons.add),
+              label: const Text('Incrementar contador'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              onPressed: _navigateToSecondScreen,
+              icon: const Icon(Icons.arrow_forward),
+              label: const Text('Ir a segunda pantalla'),
+            ),
+            const SizedBox(height: 32),
             Container(
               padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
                 color: Colors.blue[50],
                 border: Border.all(color: Colors.blueAccent),
@@ -106,10 +125,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Incrementar',
-        child: const Icon(Icons.add),
+    );
+  }
+}
+
+// 📄 Segunda pantalla
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Segunda pantalla')),
+      body: const Center(
+        child: Text(
+          '¡Has navegado a otra pantalla!',
+          style: TextStyle(fontSize: 20),
+        ),
       ),
     );
   }
