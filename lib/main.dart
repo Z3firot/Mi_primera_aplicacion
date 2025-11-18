@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'welcome_screen.dart'; 
-
+import 'second_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-// 🌟 Aplicación principal
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,7 +22,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// 🏠 Pantalla principal
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -123,24 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-// 📄 Segunda pantalla
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Segunda pantalla')),
-      body: const Center(
-        child: Text(
-          '¡Has navegado a otra pantalla!',
-          style: TextStyle(fontSize: 20),
         ),
       ),
     );
