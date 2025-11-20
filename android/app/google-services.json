@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1032772647010",
+    "project_id": "mi-primera-aplicacion-ede61",
+    "storage_bucket": "mi-primera-aplicacion-ede61.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032772647010:android:6a0f1b4f91ba82c526793b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Hko4rD1CiOeRP2GqVEix_lw70592q58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
