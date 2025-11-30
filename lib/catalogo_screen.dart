@@ -36,7 +36,7 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
           return Card(
             margin: const EdgeInsets.all(10),
             child: ListTile(
-              leading: Image.asset(pelicula.imagen, width: 50, fit: BoxFit.cover),
+              leading: Image.asset(pelicula.imagen, width: 30, fit: BoxFit.cover),
               title: Text(pelicula.titulo),
               subtitle: Text(pelicula.anio),
               onTap: () {

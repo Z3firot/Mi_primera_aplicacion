@@ -24,7 +24,7 @@ List<Movie> peliculas = [
     director: "Christopher Nolan",
     genero: "Ciencia ficción",
     sinopsis: "Un ladrón que roba secretos a través de los sueños debe realizar la misión más difícil de su vida.",
-    imagen: "assets/inception.jpg",
+    imagen: "inception.jpg",
   ),
   Movie(
     titulo: "Interstellar",
@@ -32,6 +32,6 @@ List<Movie> peliculas = [
     director: "Christopher Nolan",
     genero: "Ciencia ficción",
     sinopsis: "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
-    imagen: "assets/interstellar.jpg",
+    imagen: "interstellar.jpg",
   ),
 ];
